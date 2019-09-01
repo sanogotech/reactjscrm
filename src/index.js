@@ -1,13 +1,13 @@
-import ReactDOM from 'react-dom';
-import React, { Component } from 'react';
+import ReactDOM from "react-dom";
+import React, { Component } from "react";
 
 class Todo extends Component {
   constructor(props) {
     super(props);
     this.state = {
       list: [],
-      text: ''
-    }
+      text: ""
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.removeItem = this.removeItem.bind(this);
@@ -17,14 +17,14 @@ class Todo extends Component {
     e.preventDefault();
     this.setState(prevState => ({
       list: prevState.list.concat(this.state.text),
-      text: ''
-    }))
+      text: ""
+    }));
   }
 
   handleChange(e) {
     this.setState({
       text: e.target.value
-    })
+    });
   }
 
   removeItem(index) {
@@ -36,22 +36,24 @@ class Todo extends Component {
   render() {
     return (
       <div>
-        <h1>TODO LIST</h1>
+        <h1>GESTION CONTACTS</h1>
         <form onSubmit={this.handleSubmit}>
           <input value={this.state.text} onChange={e => this.handleChange(e)} />
           <button>Add</button>
           <ol>
             {this.state.list.map((item, index) => {
               return (
-                <li key={index}>{item}
+                <li key={index}>
+                  {item}
                   <button onClick={() => this.removeItem(index)}>Delete</button>
-                </li>)
+                </li>
+              );
             })}
           </ol>
         </form>
       </div>
-    )
+    );
   }
 }
 
-ReactDOM.render(<Todo />, document.getElementById('root'));
+ReactDOM.render(<Todo />, document.getElementById("root"));
