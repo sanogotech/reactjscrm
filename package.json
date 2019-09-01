@@ -1,7 +1,7 @@
 {
-  "name": "react-example",
+  "name": "react-crm",
   "version": "0.0.0",
-  "description": null,
+  "description": "",
   "keywords": [],
   "main": "index.js",
   "dependencies": {
